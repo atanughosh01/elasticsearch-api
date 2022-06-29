@@ -6,15 +6,15 @@
 
 1. Functionality to load the data in the system:
     * BULK INDEXING DATA (from file)
-      * file should of csv type.
-      * file can be json data file.
-    * INSERITNG A SINGLE DOCUMENT
+      * file should be of CSV type.
+      * file can be JSON data file.
+    * INSERTING A SINGLE DOCUMENT
 
 2. Functionality to search the data:
     * Search on the basis of unique id.
     * Search on the basis of any specific key value.
     * Search and fetch the records in the time range given as input.
-    * Keyword based search or full-text search capabilty.
+    * Keyword-based search or full-text search capability.
     * Aggregated info my data.
 
 3. Index creation
