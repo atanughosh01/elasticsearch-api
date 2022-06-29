@@ -27,3 +27,6 @@
 2. Code environment
 3. Desired Mapping of the index 
     - Timestamp is mandatory in the document that are indexed.
+
+
+#### Refer to [this](https://elasticsearch-dsl.readthedocs.io/en/latest/index.html) for help
