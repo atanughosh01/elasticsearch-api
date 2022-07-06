@@ -1,14 +1,13 @@
-# ElasticSearch
+# ElasticSearchAPI
 
 **ELastic** : A timesries DB primarily use to fetch the KPI and insites from large data set.
 
-### AIM / OBEJCTIVE:
+### Objective:
 
 1. Functionality to load the data in the system:
-    * BULK INDEXING DATA (from file)
-      * file should be of CSV type.
-      * file can be JSON data file.
-    * INSERTING A SINGLE DOCUMENT
+    * Bulk indexing the data (from file)
+      - file should be of `csv`or `json` data file.
+    * Inserting a single document
 
 2. Functionality to search the data:
     * Search on the basis of unique id.
