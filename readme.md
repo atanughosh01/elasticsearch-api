@@ -1,4 +1,4 @@
-# ElasticSearchAPI
+# elasticsearch-api
 
 **ELastic** : A timesries DB primarily use to fetch the KPI and insites from large data set.
 
