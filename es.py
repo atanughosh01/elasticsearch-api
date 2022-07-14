@@ -2,7 +2,6 @@
 
 from datetime import datetime
 from elasticsearch import Elasticsearch
-from elasticsearch_dsl import Search, index, response
 
 HOST = "http://localhost"
 PORT = "9200"
@@ -15,31 +14,21 @@ query = {
     "timestamp": datetime.now()
 }
 
-# Datetimes will be serialized:
-# es.index(
-#     index="my_index_001",
-#     id="mi_001",
-#     document=query
-# )
+
 es.index(
     index="my_index_001",
-    doc_type="_doc",
     id="mi_001",
-    body=query
+    document=None
 )
 
-# ...but not deserialized
 test1 = es.get(
     index="my_index_001",
-    doc_type="_doc",
-    id="mi_001",
+    id="mi_001"
 )
 
-# ...but not deserialized
 test2 = es.get(
     index="my_index_001",
-    doc_type="_doc",
-    id="mi_001",
+    id="mi_001"
 )['_source']
 
 
@@ -50,7 +39,7 @@ print(test2)
 print("--------------------------------------------")
 
 
-s = Search(using=es, index="my_index_001")
+s = es.search(index="my_index_001")
 sq = s.query(
     "match",
     any="data"
