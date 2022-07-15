@@ -1,4 +1,9 @@
+# folders
+.pytest_cache/
 __pycache__/
+.vscode/
+.idea/
 venv/
 
-*.pyc
+# files
+creds.py

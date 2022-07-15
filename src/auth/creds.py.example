@@ -1,0 +1,5 @@
+ES_ENDPOINT: str =
+PASSWORD: str =
+USERNAME: str =
+
+FILE_PATH_PREFIX: str =
