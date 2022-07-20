@@ -1,7 +1,4 @@
-# ECE_ES_APP_INTERN
-
-This repo is meant for the creation of `ECE_ES` based app by the interns.
-
+# elasticsearch-api
 
 ## Objective
 
