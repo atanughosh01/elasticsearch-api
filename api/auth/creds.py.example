@@ -1,0 +1,5 @@
+"""Module containing credentials"""
+
+ES_ENDPOINT: str = "-----------------"
+PASSWORD: str = "--------------------"
+USERNAME: str = "--------------------"
