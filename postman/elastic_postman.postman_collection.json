@@ -1,0 +1,434 @@
+{
+	"info": {
+		"_postman_id": "f8184daa-2c92-471c-954e-6f62f7d5c85c",
+		"name": "elastic_postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "crud_index",
+			"item": [
+				{
+					"name": "create_index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/create_index?index=<index_name>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"create_index"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "<index_name>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_index",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/delete_index?index=<index_name>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"delete_index"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "<index_name>"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "crud_data",
+			"item": [
+				{
+					"name": "add_single_record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empId\": \"300\",\r\n    \"firstName\": \"test_fname\",\r\n    \"lastName\": \"test_lanme\",\r\n    \"dept\": \"SWE\",\r\n    \"phnNum\": \"9988776655\",\r\n    \"emailAddr\": \"test@gmail.com\",\r\n    \"joinDate\": \"2020-11-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/add_single/into?index=idx",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"add_single",
+								"into"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "idx"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_multiple_records",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/add_multiple/into?index=dummy&file=csv/emp.csv",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"add_multiple",
+								"into"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "dummy"
+								},
+								{
+									"key": "file",
+									"value": "csv/emp.csv"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search_data",
+			"item": [
+				{
+					"name": "get_data_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/get?index=<index_name>&id=<doc_id>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "<index_name>"
+								},
+								{
+									"key": "id",
+									"value": "<doc_id>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_all_by_id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/search?index=<index_name>&id=<doc_id>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "<index_name>"
+								},
+								{
+									"key": "id",
+									"value": "<doc_id>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_all_by_key_and_value",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"index\": \"tdp_idx\",\r\n    \"key\": \"dept\",\r\n    \"value\": \"Manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/search_all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"search_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_field_by_key_and_value",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"field\": \"fName\",\r\n    \"index\": \"tdp_idx\",\r\n    \"key\": \"dept\",\r\n    \"value\": \"Manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/search_field",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"search_field"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_all_by_time_range",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"index\": \"tdp_idx\",\r\n    \"range_key\": \"jDt\",\r\n    \"from\": \"2020-05-10\",\r\n    \"upto\": \"2021-03-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/search_range",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"search_range"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_field_by_time_range",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"field\": \"fName\",\r\n    \"index\": \"tdp_idx\",\r\n    \"range_key\": \"jDt\",\r\n    \"from\": \"2020-05-10\",\r\n    \"upto\": \"2021-03-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/search_field_range",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"search_field_range"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_by_keyword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/search_keyword?index=tdp_idx&keyword=Developer",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"search_keyword"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "tdp_idx"
+								},
+								{
+									"key": "keyword",
+									"value": "Developer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_by_full_text",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/search_fulltext?index=tdp_idx&text=evelop",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"search_fulltext"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "tdp_idx"
+								},
+								{
+									"key": "text",
+									"value": "evelop"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TEST_POST_REQ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"index\": \"tdp_idx\",\r\n    \"key\": \"dept\",\r\n    \"value\": \"Manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/search_all",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"search_all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
