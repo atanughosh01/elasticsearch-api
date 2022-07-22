@@ -91,5 +91,6 @@ Make sure that `python-dotenv` is installed
 
 Then execute `flask run` on the terminal.
 
+<br>
 
 Open `http://127.0.0.1:5000` in a browser.
