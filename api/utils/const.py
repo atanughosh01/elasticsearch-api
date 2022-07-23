@@ -24,4 +24,4 @@ REQUEST_TIMEOUT = 1
 SPECIAL_CHARS = r"[@!#$%^&*()<>?/\|}{~:]"
 
 # indices should start with this prefix
-INDEX_NAME_PREFIX = "tdp_interns_"
+INDEX_NAME_PREFIX = "sample_"
