@@ -1,0 +1,8 @@
+.gitignore
+readme.md
+license
+.test/
+postman/
+.vscode/
+.github/
+.pytest_cache/
