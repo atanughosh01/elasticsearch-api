@@ -93,4 +93,45 @@ Then execute `flask run` on the terminal.
 
 <br>
 
-Open `http://127.0.0.1:5000` in a browser.
+Open `http://127.0.0.1:5000` in a browser.\
+Use **Postman** to test the collection of API's.
+
+
+<br>
+
+## Steps for Containerization
+
+- Move to the `root` directory.
+- Check if the `.flaskenv` file exists, if not create it
+- Make sure whether `Docker` is running or not
+
+        $ docker version
+        $ docker images
+
+- Build the docker image with `Dockerfile`
+
+        $ docker build -t es-api:v0.0.1 .
+
+- Run the docker image
+
+        $ docker run --name ElasticAPI -p 5000:5000 -d es-api:v0.0.1
+
+- Check the status of the container
+
+        $ docker ps
+
+<br>
+
+Open `localhost:5000` in a browser.\
+Use **Postman** to test the collection of API's.
+
+
+<!-- Dockerfile
+
+    FROM python:3.9-alpine
+    RUN apk add --no-cache python3-pip
+    RUN pip3 install -r requirements.txt
+    WORKDIR /app
+    COPY . .
+    EXPOSE 5000
+    CMD ["python", "app.py"] -->
