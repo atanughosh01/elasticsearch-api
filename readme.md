@@ -5,25 +5,25 @@ A collection of RESTful API's, written and tested using the `Flask` framework of
 ## Currently Supports
 
 1. Index creation:
-    - - [x] Creating Indices.
-    - - [x] Assigning ID-s.
-    - - [x] Timestamp is mandatory in the records that are being indexed.
+    - [x] Creating Indices.
+    - [x] Assigning ID-s.
+    - [x] Timestamp is mandatory in the records that are being indexed.
   
 2. Functionality to load the data in the system:
-    - - [x] Bulk indexing the data (from file).
-    - - [x] File should be of `csv` or `json` type.
-    - - [x] Inserting a single document.
+    - [x] Bulk indexing the data (from file).
+    - [x] File should be of `csv` or `json` type.
+    - [x] Inserting a single document.
 
 3. Functionality to search the data:
-    - - [x] Search on the basis of unique id.
-    - - [x] Search on the basis of any specific key value.
-    - - [x] Search and fetch the records in the time range given as input.
-    - - [x] Keyword-based search functionality.
-    - - [x] Full-text search functionality.
+    - [x] Search on the basis of unique id.
+    - [x] Search on the basis of any specific key value.
+    - [x] Search and fetch the records in the time range given as input.
+    - [x] Keyword-based search functionality.
+    - [x] Full-text search functionality.
   
 4. Aggregated info of my data.
-    - - [ ] Create `Kibana` dashboard for the data that is inserted
-    - - [ ] Visualize and analyze the data from dashboard.
+    - [ ] Create `Kibana` dashboard for the data that is inserted
+    - [ ] Visualize and analyze the data from dashboard.
 
 
 <br>
@@ -91,8 +91,6 @@ Make sure that `python-dotenv` is installed
 
 Then execute `flask run` on the terminal.
 
-<br>
-
 Open `http://127.0.0.1:5000` in a browser.\
 Use **Postman** to test the collection of API's.
 
@@ -119,8 +117,6 @@ Use **Postman** to test the collection of API's.
 - Check the status of the container
 
         $ docker ps
-
-<br>
 
 Open `localhost:5000` in a browser.\
 Use **Postman** to test the collection of API's.
